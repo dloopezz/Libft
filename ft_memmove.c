@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 13:39:57 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/14 14:25:46 by lopezz           ###   ########.fr       */
+/*   Created: 2022/09/14 14:27:41 by lopezz            #+#    #+#             */
+/*   Updated: 2022/09/14 14:31:59 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+void *memmove(void *dst, const void *src, size_t len)
 {
-	unsigned long int	i;
+    unsigned char *d;
+    unsigned const char *s;
+    size_t i;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+    d = (unsigned char*)dst;
+    s = (unsigned const char *)src;
+    i = 0;
+    
+    while (i < len)
+    {
+        d[i] = s[i];
+        i++;
+    }
+    return (dst);
 }
 
-/*
+
 #include <stdio.h>
+#include <string.h>
 
-int	main()
+int main()
 {
-	char	*c;
-
-	c = "illo";
-	printf  ("%d", ft_strlen(c));
-	return (0);
+    char dst[] = "holaa";
+    char src[] = "adios";
+    ft_memcpy(dst, src, sizeof(src));
+    printf("%s", dst);
+    return (0);
 }
-
-*/

@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 13:39:57 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/14 14:25:46 by lopezz           ###   ########.fr       */
+/*   Created: 2022/09/14 13:20:04 by lopezz            #+#    #+#             */
+/*   Updated: 2022/09/14 14:28:02 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+void    ft_bzero(void *s, size_t n)
 {
-	unsigned long int	i;
+    size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (i < n)
 	{
+		((char *)s)[i] = 0;
 		i++;
 	}
-	return (i);
 }
 
 /*
 #include <stdio.h>
+#include <string.h>
 
-int	main()
+int main()
 {
-	char	*c;
-
-	c = "illo";
-	printf  ("%d", ft_strlen(c));
+	char str[] = "Hola que tal";
+	
+	ft_bzero(str + 5, 3);
+	printf("%s", str);
 	return (0);
 }
-
 */

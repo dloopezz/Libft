@@ -3,20 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 13:43:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/13 15:10:12 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:27:52 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void *b, int c, int len) //size_t len
+#include "libft.h"
+
+void *ft_memset(void *b, int c, size_t len)
 {
-		
+	size_t	i;
+	unsigned char	*str;
+
+	str = b;
+	i = 0;
+	while (i < len)
+	{
+		str[i] = (unsigned char)c;
+		i++;
+	}
+	return (b);
 }
 
-
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -24,20 +35,8 @@ int main()
 {
 	char str[] = "Hola que tal";
 	
-	memset(str + 5, '.', 3);
+	ft_memset(str + 5, '.', 3);
 	printf("%s", str);
 	return (0);
-}
-
-/*#include <string.h>
-
-void	*ft_memset(void *str, int c, size_t len)
-{
-	unsigned char	*string;
-
-	string = (unsigned char*)str;
-	while (len-- > 0)
-		*(string++) = (unsigned char)c;
-	return (str);
 }
 */
