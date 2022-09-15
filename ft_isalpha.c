@@ -6,15 +6,15 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:10:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/13 14:57:22 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:02:16 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	return (('A' < c && c < 'Z') || ('a' < c && c < 'z'));	
+	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
 }
 
 /*
@@ -31,5 +31,4 @@ int main()
 		printf("%d", ft_isalpha(c));
 	return 0;
 }
-
 */

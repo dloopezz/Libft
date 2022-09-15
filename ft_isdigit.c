@@ -6,15 +6,15 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:39:58 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/13 12:45:21 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:53:59 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	return ('0' <= c && c <= '9');	
+	return ('0' <= c && c <= '9');
 }
 
 /*

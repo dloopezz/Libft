@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:20:04 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/14 14:28:02 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/14 17:52:19 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    size_t	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

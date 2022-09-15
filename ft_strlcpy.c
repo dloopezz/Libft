@@ -5,47 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 15:11:42 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/13 15:44:22 by dlopez-s         ###   ########.fr       */
+/*   Created: 2022/09/15 12:49:52 by dlopez-s          #+#    #+#             */
+/*   Updated: 2022/09/15 16:28:49 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-unsigned int	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)     //(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 
 	i = 0;
-	if (dstsize == 0)
+	if (size == 0)
 	{
-		return (ft_strlen(src));
+		return (ft_strlen((char *) src));
 	}
-	while (src[i] != '\0' && i < (dstsize - 1))
+	while (src[i] != '\0' && i < (size - 1))
 	{
-		dst[i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	dest[i] = '\0';
+	return (ft_strlen((char *)src));
 }
 
-/*int main()
+/*
+#include <string.h>
+#include <stdio.h>
+
+int main()
 {
 	char src[] = "illo ill0";
 	char dest[55];
-	printf("%d %s", ft_strlcpy(dest, src, 22), dest);
+	printf("%zu %s", ft_strlcpy(dest, src, 22), dest);
 }
 */
