@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 13:17:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/16 20:00:28 by lopezz           ###   ########.fr       */
+/*   Created: 2022/09/16 20:19:36 by lopezz            #+#    #+#             */
+/*   Updated: 2022/09/17 15:55:27 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	unsigned char *str;
-	size_t  i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
+	j = 0;
+	if (to_find[i] == '\0')
+		return ((char *)str);
+	while (str[i] != '\0' || (i + j) < len)
 	{
-		if (str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+			j++;
+		if (to_find[j] == '\0')
+			return ((char *)str + i);
 		i++;
+		j = 0;
 	}
-	return (NULL);
+	return (0);
 }
-/*
+
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-	printf("%s", (unsigned char *) ft_memchr("Holaaa", 't', 3));
-	return (0);
+	char str[] = "Hello World";
+	char find[] = "llo";
+	printf("%s\n", ft_strnstr(str, find, 4));
+	printf("%s", strnstr(str, find, 4));
 }
-*/

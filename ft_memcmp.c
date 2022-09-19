@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 13:17:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/16 20:00:28 by lopezz           ###   ########.fr       */
+/*   Created: 2022/09/16 20:01:45 by lopezz            #+#    #+#             */
+/*   Updated: 2022/09/16 20:15:44 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *str;
-	size_t  i;
+	size_t	i;
+	size_t	diff;
+	unsigned char *str1;
+	unsigned char *str2;
 
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	
 	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
+	diff = 0;
+	while ((str1[i] != '\0') && (str2[i] != '\0') && (i < n) && (diff == 0))
 	{
-		if (str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
-		i++;
+		diff = str1[i] - str2[i];
+		i ++;
 	}
-	return (NULL);
+	if (i < n && (diff == 0) && ((str1[i] != '\0') || (str2[i] != '\0')))
+	{
+		diff = str1[i] - str2[i];
+	}
+	return (diff);
 }
+
 /*
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-	printf("%s", (unsigned char *) ft_memchr("Holaaa", 't', 3));
+	printf("%d", ft_memcmp("b", "a", 6));
 	return (0);
 }
 */
