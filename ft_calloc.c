@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 13:17:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/19 16:00:21 by dlopez-s         ###   ########.fr       */
+/*   Created: 2022/09/19 18:28:27 by dlopez-s          #+#    #+#             */
+/*   Updated: 2022/09/19 19:53:16 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*str;
-	size_t			i;
+	void	*p;
 
-	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
+	p = (int *)malloc(count * size);
+	if (p == 0)
+		return (NULL);
+	else
 	{
-		if (str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
-		i++;
+		ft_bzero(p, count * size);
+		return (p);
 	}
-	return (NULL);
 }
+
 /*
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-	printf("%s", (unsigned char *) ft_memchr("Holaaa", 't', 3));
-	return (0);
+int *a;
+   int i;
+   int n;
+
+   n = 4;
+   a = (int*)ft_calloc(4, sizeof(int));
+   printf("The numbers entered are: ");
+   for( i=0 ; i < n ; i++ )
+      printf("%d ",a[i]);
+   free( a );
+   return(0);
 }
 */

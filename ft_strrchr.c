@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:27:16 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/16 16:29:51 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:26:37 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,40 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	len;
 
-	i = ft_strlen((char *)&s);
-	while (i >= 0)
+	len = ft_strlen((char *)s);
+	if (c == 0)
+		return ((char *) &s[len]);
+	while (len >= 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		if (s[len] == (char)c)
+			return ((char *)&s[len]);
+		len--;
 	}
-	if (c == '\0')
-		return ((char *)&s[i]);
+	return (0);
+}
+
+/*
+char	*ft_strrchr(const char *s, int c)
+{
+	size_t	len;
+	size_t	aux;
+
+	aux = 0;
+	len = ft_strlen((char *)&s);
+	while (len >= 0 && aux == 0)
+	{
+		if (s[len] == c)
+		{
+			return ((char *)&s[len]);
+			aux = 1;
+		}
+		len--;
+	}
 	return (NULL);
 }
+*/
 
 /*
 #include <stdio.h>
@@ -52,7 +73,9 @@ void	ft_print_result(char const *s)
 		len++;
 	write(1, s, len);
 }
+*/
 
+/*
 int		main(int argc, const char *argv[])
 {
 	char		*str;
