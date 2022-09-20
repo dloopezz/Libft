@@ -6,7 +6,7 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:07:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/19 22:15:28 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/20 00:56:01 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_strnstr(const char *str, const char *find, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char*	ft_strdup(const char *s1);
+char *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
