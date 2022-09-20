@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:01:46 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/20 17:33:47 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/20 23:30:39 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strchr(const char *s, int c)
 int main()
 {
 	char s[] = "tripouille";
-	printf("%s", ft_strchr(s, 't' + 256));
+	printf("%s", ft_strchr(s, 'o'));
 	return (0);
 }
 */

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 18:10:37 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/20 21:30:57 by lopezz           ###   ########.fr       */
+/*   Created: 2022/09/20 21:59:01 by lopezz            #+#    #+#             */
+/*   Updated: 2022/09/20 21:59:22 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	hhj
+    
 }
