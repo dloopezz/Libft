@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 13:39:57 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/20 18:04:25 by dlopez-s         ###   ########.fr       */
+/*   Created: 2022/09/20 18:10:37 by dlopez-s          #+#    #+#             */
+/*   Updated: 2022/09/20 18:11:02 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char *ft_strtrim(char const *s1, char const *set)
 {
-	unsigned long int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	
 }
-
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	*c;
-
-	c = "illo";
-	printf  ("%d", ft_strlen(c));
-	return (0);
-}
-
-*/

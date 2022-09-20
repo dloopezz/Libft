@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:01:46 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/16 16:28:21 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/20 17:33:47 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (c == '\0')
 		return ((char *)&s[i]);
-	return (NULL);
+	return (0);
 }
 
 /*
@@ -34,7 +34,8 @@ char	*ft_strchr(const char *s, int c)
 
 int main()
 {
-	printf("%s", ft_strchr("Holaaa", 'z'));
+	char s[] = "tripouille";
+	printf("%s", ft_strchr(s, 't' + 256));
 	return (0);
 }
 */
