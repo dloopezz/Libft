@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:10:37 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/20 18:54:34 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:30:57 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	
+	hhj
 }
