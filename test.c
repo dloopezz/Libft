@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:10:37 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/20 23:45:07 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/21 16:24:13 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			ft_getend(const char *s1, const char *set)
 	return (len - i);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrimm(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
@@ -66,10 +66,11 @@ char		*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(newstr, s1 + start, end - start + 1);
 	return (newstr);
 }
+
 int main()
 {
 	char s1[] = "   Hola que tal   ";
-	char set[] = "que tal";
+	char set[] = "que talo";
 	
 	printf("%s", ft_strtrim(s1, set));
 	return (0);
