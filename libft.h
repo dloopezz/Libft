@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:07:30 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/22 16:15:42 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/22 19:48:40 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
