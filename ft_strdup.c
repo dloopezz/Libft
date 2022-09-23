@@ -6,13 +6,13 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:51:50 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/19 22:25:12 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/23 12:29:14 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char*	ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*p;
 	int		len;
@@ -29,7 +29,7 @@ char*	ft_strdup(const char *s1)
 		i++;
 	}
 	p[i] = '\0';
-	return(p);		
+	return (p);
 }
 
 /*

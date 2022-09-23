@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:01:46 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/22 18:27:41 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/23 12:21:28 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	char	find;
 	size_t	i;
 
-	find  = (char) c;
+	find = (char) c;
 	i = 0;
 	while (s[i] != '\0')
 	{

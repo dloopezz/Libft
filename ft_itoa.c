@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 21:41:57 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/22 17:36:56 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/23 12:28:01 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static size_t	ft_cont(int n)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	
 	if (n <= 0)
 		i++;
 	while (n)
@@ -27,26 +27,24 @@ static size_t	ft_cont(int n)
 	return (i);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *str;
-	int len;
-	long nb;
-	
+	char	*str;
+	int		len;
+	long	nb;
+
 	len = ft_cont(n);
 	nb = n;
 	str = malloc(sizeof(char) * len + 1);
 	if (str == 0)
-		  return (NULL);
+		return (NULL);
 	if (nb < 0)
 	{
 		str[0] = '-';
 		nb = -nb;
 	}
 	if (nb == 0)
-	{
 		str[0] = '0';
-	}
 	str[len--] = '\0';
 	while (nb)
 	{
