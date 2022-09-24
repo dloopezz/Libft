@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:17 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/23 19:38:10 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/24 13:16:19 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //2. funcion para escribir cada palabra nueva (con malloc)
 //3. split
 
-static int ft_contw(char *str, char c)
+static int ft_cont(char *str, char c)
 {
 	int	i;
 	int n_words;
@@ -33,15 +33,31 @@ static int ft_contw(char *str, char c)
 	return (n_words);
 }
 
-/* char	**ft_split(char const *s, char c)
+static char *ft_word(const char *s, int inicio, int final)
+{
+	size_t i;
+	char *ptr;
+
+	ptr = malloc((final - inicio) * sizeof (char) + 1);
+	while (inicio < final)
+	{
+		ptr[i] = s[inicio];
+		i++;
+		inicio++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	
-} */
+}
 
 #include <stdio.h>
 
 int main()
 {
 	char str[] = "viva er beti";
-	printf("%d", ft_contw(str, 'a'));
+	printf("%d", ft_contw(str, ' '));
 }
