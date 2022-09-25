@@ -6,7 +6,7 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:17 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/25 17:51:28 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/25 18:02:09 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	**ft_split(const char *s, char c)
 		}
 		i++;
 	}
-	words[j] = 0;
+	words[j] = NULL;
 	return (words);
 }
 
