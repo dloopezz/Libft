@@ -6,7 +6,7 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:17 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/25 17:23:34 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/25 17:51:28 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ static char	*ft_words(const char *s, int inicio, int final)
 	ptr = malloc((final - inicio + 1) * sizeof (char));
 	while (inicio < final)
 	{
-		ptr[i++] = s[inicio++];
+		ptr[i] = s[inicio];
+		i++;
+		inicio++;
 	}
 	ptr[i] = '\0';
 	return (ptr);
@@ -73,7 +75,8 @@ char	**ft_split(const char *s, char c)
 			flag = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && flag >= 0)
 		{
-			words[j++] = ft_words(s, flag, i);
+			words[j] = ft_words(s, flag, i);
+			j++;
 			flag = -1;
 		}
 		i++;
@@ -82,10 +85,22 @@ char	**ft_split(const char *s, char c)
 	return (words);
 }
 
-/* #include <stdio.h>
+/* 
+#include <stdio.h>
 
-int main()
+int	main(void)
 {
-	char str[] = "viva er beti";
-	printf("%d", ft_cont(str, ' '));
-} */
+	char	**tab;
+	unsigned int	i;
+
+	i = 0;
+	tab = ft_split("viva er beti", ' ');
+	if (!tab[0])
+		ft_putendl_fd("ok\n", 1);
+	while (tab[i] != NULL)
+	{
+		ft_putendl_fd(tab[i], 1);
+		i++;
+	}
+} 
+*/
