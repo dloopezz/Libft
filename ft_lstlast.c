@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:01:11 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/26 17:13:25 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/26 20:58:51 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	while (lst -> next != NULL)
+	if (!lst)
+		return (0);
+	while (lst -> next)
 	{
 		lst = lst -> next;
-		i++;
 	}
 	return (lst);
 }
