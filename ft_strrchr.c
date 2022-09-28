@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 21:27:16 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/19 18:26:37 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:19:08 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,48 +17,27 @@ char	*ft_strrchr(const char *s, int c)
 	int	len;
 
 	len = ft_strlen((char *)s);
-	if (c == 0)
-		return ((char *) &s[len]);
+	if (c == '\0')
+		return ((char *) s + len);
 	while (len >= 0)
 	{
-		if (s[len] == (char)c)
-			return ((char *)&s[len]);
+		if (s[len] == (char) c)
+			return ((char *) s + len);
 		len--;
 	}
 	return (0);
 }
 
-/*
-char	*ft_strrchr(const char *s, int c)
-{
-	size_t	len;
-	size_t	aux;
-
-	aux = 0;
-	len = ft_strlen((char *)&s);
-	while (len >= 0 && aux == 0)
-	{
-		if (s[len] == c)
-		{
-			return ((char *)&s[len]);
-			aux = 1;
-		}
-		len--;
-	}
-	return (NULL);
-}
-*/
-
-/*
+/* 
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-	printf("%s", strrchr("bonjourno", 'o'));
+	printf("%s", strrchr("bonjourno", 'u'));
 	return (0);
 }
-*/
+ */
 /*
 #include <stdlib.h>
 #include <unistd.h>

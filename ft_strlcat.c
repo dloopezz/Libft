@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:56:25 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/27 21:55:09 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/28 18:27:49 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,36 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dsize)
 {
-	size_t	d;
-	size_t	s;
 	size_t	i;
 	size_t	j;
+	size_t	aux;
 
-	j = 0;
 	i = ft_strlen(dest);
-	s = ft_strlen((char *)src);
-	d = i;
+	aux = i;
+	j = 0;
 	if (dsize <= i)
-		return (s + dsize);
-	while (src[j] != '\0' && (i < (dsize - 1)) && (dsize != 0))
+		return (ft_strlen((char *)src) + dsize);
+	while (src[j] != '\0' && (i < (dsize - 1)))
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 	}
 	dest[i] = '\0';
-	return (d + s);
+	return (aux + ft_strlen((char *)src));
 }
 
-/*
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 
 int main()
 {
 	char dest[] = "La";
 	char src[] = "Wo";
-	printf("Size: %zu\n", ft_strlcat(dest, src, sizeof(dest)));
+	printf("Size: %zu\n", ft_strlcat(dest, src, 4));
 	printf("Dest: %s\n", dest);
 	printf("Src: %s", src);
-}
-*/
+} */
 
 /*
 #include <unistd.h>
