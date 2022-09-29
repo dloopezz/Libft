@@ -6,15 +6,11 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:17 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/25 18:02:09 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/29 19:52:10 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//1. hacer contador de palabras
-//2. funcion para escribir cada palabra nueva (con malloc)
-//3. split
 
 static int	ft_cont(const char *str, char c)
 {
@@ -86,6 +82,10 @@ char	**ft_split(const char *s, char c)
 }
 
 /* 
+//1. hacer contador de palabras
+//2. funcion para escribir cada palabra nueva (con malloc)
+//3. split
+
 #include <stdio.h>
 
 int	main(void)

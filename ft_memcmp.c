@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:01:45 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/20 17:14:22 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/29 19:09:42 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	return ((int)(str1[i] - str2[i]));
 }
-/*
-#include <stdio.h>
+
+/* #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-	printf("%d", ft_memcmp("abcdefghij", "abcdefgxyz", 7));
+	printf("%d", ft_memcmp("abcd", "abcg", 4));
 	return (0);
-}
-*/
+} */
 /*
 #include <stdio.h>
 #include <string.h>

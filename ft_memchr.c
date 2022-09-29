@@ -6,7 +6,7 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:17:12 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/22 21:52:57 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/29 18:26:55 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
+			return ((void *) str + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
 #include <stdio.h>

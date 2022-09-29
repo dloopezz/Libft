@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 21:59:01 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/27 16:18:45 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/09/29 19:53:16 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,16 +139,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	ft_strlcpy(str, s1 + inicio, final - inicio + 1);
 	return (str);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	char s1[] = "   Hola que tal   ";
-	char set[] = "que tal";
-	
-	printf("%s", ft_strtrim(s1, set));
-	return (0);
 }
 */
