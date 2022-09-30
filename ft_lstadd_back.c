@@ -6,7 +6,7 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:15:34 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/27 12:58:48 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/30 13:32:38 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*aux;
-
 	if (!new)
 		return ;
 	if (!*lst)
@@ -23,8 +21,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	aux = ft_lstlast(*lst);
-	aux -> next = new;
+	ft_lstlast (*lst)-> next = new;
 }
 
 /* void	ft_lstadd_back(t_list **alst, t_list *new)

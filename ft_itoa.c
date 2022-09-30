@@ -6,7 +6,7 @@
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 21:41:57 by lopezz            #+#    #+#             */
-/*   Updated: 2022/09/23 12:28:01 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/09/30 12:34:18 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static size_t	ft_cont(int n)
 		i++;
 	while (n)
 	{
-		i++;
 		n = n / 10;
+		i++;
 	}
 	return (i);
 }
@@ -45,12 +45,13 @@ char	*ft_itoa(int n)
 	}
 	if (nb == 0)
 		str[0] = '0';
-	str[len--] = '\0';
+	str[len] = '\0';
+	len--;
 	while (nb)
 	{
 		str[len] = (nb % 10) + '0';
-		len--;
 		nb = nb / 10;
+		len--;
 	}
 	return (str);
 }
