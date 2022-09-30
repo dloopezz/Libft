@@ -1,7 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/30 15:45:23 by dlopez-s          #+#    #+#              #
+#    Updated: 2022/09/30 16:50:50 by dlopez-s         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 CC = gcc
-CCFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRC =	ft_isalpha.c\
 		ft_isdigit.c\
@@ -54,16 +66,19 @@ OBJS_BONUS = $(SRC_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CCFLAGS) $(SRC) -c
 	@ar rsc $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	@$(CC) $(CCFLAGS) $(SRC_BONUS) -c
-	@ar rsc $(NAME) $(OBJS) $(OBJS_BONUS)
+#bonus: $(OBJS) $(OBJS_BONUS)
+#	@ar rsc $(NAME) $(OBJS) $(OBJS_BONUS)
 
+#bonus: $(OBJS_BONUS)
+#	@ar rsc $(NAME) $(OBJS_BONUS)
+
+bonus:
+	@make SRC= $(OBJS) $(OBJS_BONUS)
+	
 clean:
 	@rm -f $(OBJS) $(OBJS_BONUS)
-
 
 fclean: clean
 	@rm -f $(NAME)
@@ -72,4 +87,4 @@ re: fclean all
 
 rebonus: fclean bonus
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
