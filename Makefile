@@ -6,7 +6,7 @@
 #    By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 15:45:23 by dlopez-s          #+#    #+#              #
-#    Updated: 2022/09/30 16:50:50 by dlopez-s         ###   ########.fr        #
+#    Updated: 2022/09/30 20:15:54 by dlopez-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,17 +50,18 @@ SRC =	ft_isalpha.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
 
-SRC_BONUS =	ft_lstnew.c\
-			ft_lstadd_front.c\
-			ft_lstsize.c\
-			ft_lstlast.c\
-			ft_lstadd_back.c\
-			ft_lstdelone.c\
-			ft_lstclear.c\
-			ft_lstiter.c\
-			ft_lstmap.c\
-
 OBJS = $(SRC:.c=.o)
+
+SRC_BONUS =	ft_lstnew_bonus.c\
+			ft_lstadd_front_bonus.c\
+			ft_lstsize_bonus.c\
+			ft_lstlast_bonus.c\
+			ft_lstadd_back_bonus.c\
+			ft_lstdelone_bonus.c\
+			ft_lstclear_bonus.c\
+			ft_lstiter_bonus.c\
+			ft_lstmap_bonus.c\
+
 OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
@@ -68,14 +69,8 @@ all: $(NAME)
 $(NAME) : $(OBJS)
 	@ar rsc $(NAME) $(OBJS)
 
-#bonus: $(OBJS) $(OBJS_BONUS)
-#	@ar rsc $(NAME) $(OBJS) $(OBJS_BONUS)
-
-#bonus: $(OBJS_BONUS)
-#	@ar rsc $(NAME) $(OBJS_BONUS)
-
 bonus:
-	@make SRC= $(OBJS) $(OBJS_BONUS)
+	make SRC='$(SRC) $(SRC_BONUS)'
 	
 clean:
 	@rm -f $(OBJS) $(OBJS_BONUS)
