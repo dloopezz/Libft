@@ -6,7 +6,7 @@
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:17 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/10/01 12:53:48 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2022/10/01 13:58:35 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,7 @@ static int	ft_cont(const char *str, char c)
 	return (n_words);
 }
 
-static char	*ft_words(const char *s, int inicio, int final)
-{
-	int		i;
-	char	*ptr;
-
-	i = 0;
-	ptr = malloc((final - inicio + 1) * sizeof (char));
-	while (inicio < final)
-	{
-		ptr[i] = s[inicio];
-		i++;
-		inicio++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
-}
-
-static void	ft_freemem(char **matrix)
+static char	**ft_freemem(char **matrix)
 {
 	size_t	i;
 
@@ -63,81 +46,43 @@ static void	ft_freemem(char **matrix)
 		i++;
 	}
 	free(matrix);
+	return (NULL);
 }
-
 
 char	**ft_split(const char *s, char c)
 {
 	char	**words;
 	size_t	i;
-	size_t	j;
-	int		flag;
+	int		j;
+	int		n_words;
 
-	words = ft_calloc((ft_cont(s, c) + 1), sizeof (char *));
+	n_words = ft_cont(s, c);
+	words = ft_calloc(n_words + 1, sizeof (char *));
 	if (!words || !s)
 		return (0);
 	i = 0;
 	j = 0;
-	flag = -1;
-	while (i <= ft_strlen(s))
+	while (j < n_words)
 	{
-		if (s[i] != c && flag < 0)
-			flag = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && flag >= 0)
-		{
-			words[j] = ft_words(s, flag, i);
-			if (words[j++] == 0)
-			{
-				ft_freemem(words);
-				return (0);
-			}
-			flag = -1;
-		}
-		i++;
+		i = 0;
+		while (*s == c)
+			s++;
+		while (s[i] != c && s[i])
+			i++;
+		words[j] = ft_substr(s, 0, i);
+		s = s + i;
+		if (words[j++] == 0)
+			return (ft_freemem(words));
 	}
 	return (words);
 }
 
-
-
-/* char	**ft_split(const char *s, char c)
-{
-	char	**words;
-	size_t	i;
-	size_t	j;
-	int		flag;
-
-	words = ft_calloc((ft_cont(s, c) + 1), sizeof (char *));
-	if (!words || !s)
-		return (0);
-	i = 0;
-	j = 0;
-	flag = -1;
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && flag < 0)
-			flag = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && flag >= 0)
-		{
-			words[j] = ft_words(s, flag, i);
-			if (words[j++] == 0)
-			{
-				ft_freemem(words);
-				return (0);
-			}
-			flag = -1;
-		}
-		i++;
-	}
-	return (words);
-} */
-
-/* 
+/*
 //1. hacer contador de palabras
 //2. funcion para escribir cada palabra nueva (con malloc)
 //3. split
 
-#include <stdio.h>
+ #include <stdio.h>
 
 int	main(void)
 {
