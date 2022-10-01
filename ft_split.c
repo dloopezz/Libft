@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:51:17 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/29 19:52:10 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/10/01 12:53:48 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,20 @@ static char	*ft_words(const char *s, int inicio, int final)
 	return (ptr);
 }
 
+static void	ft_freemem(char **matrix)
+{
+	size_t	i;
+
+	i = 0;
+	while (matrix[i])
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix);
+}
+
+
 char	**ft_split(const char *s, char c)
 {
 	char	**words;
@@ -59,7 +73,7 @@ char	**ft_split(const char *s, char c)
 	size_t	j;
 	int		flag;
 
-	words = malloc((ft_cont(s, c) + 1) * sizeof (char *));
+	words = ft_calloc((ft_cont(s, c) + 1), sizeof (char *));
 	if (!words || !s)
 		return (0);
 	i = 0;
@@ -72,14 +86,51 @@ char	**ft_split(const char *s, char c)
 		else if ((s[i] == c || i == ft_strlen(s)) && flag >= 0)
 		{
 			words[j] = ft_words(s, flag, i);
-			j++;
+			if (words[j++] == 0)
+			{
+				ft_freemem(words);
+				return (0);
+			}
 			flag = -1;
 		}
 		i++;
 	}
-	words[j] = NULL;
 	return (words);
 }
+
+
+
+/* char	**ft_split(const char *s, char c)
+{
+	char	**words;
+	size_t	i;
+	size_t	j;
+	int		flag;
+
+	words = ft_calloc((ft_cont(s, c) + 1), sizeof (char *));
+	if (!words || !s)
+		return (0);
+	i = 0;
+	j = 0;
+	flag = -1;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && flag < 0)
+			flag = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && flag >= 0)
+		{
+			words[j] = ft_words(s, flag, i);
+			if (words[j++] == 0)
+			{
+				ft_freemem(words);
+				return (0);
+			}
+			flag = -1;
+		}
+		i++;
+	}
+	return (words);
+} */
 
 /* 
 //1. hacer contador de palabras
