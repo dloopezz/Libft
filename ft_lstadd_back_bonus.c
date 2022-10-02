@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:15:34 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/09/30 13:32:38 by lopezz           ###   ########.fr       */
+/*   Updated: 2022/10/02 20:19:15 by lopezz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	ft_lstlast (*lst)-> next = new;
 }
-
-/* void	ft_lstadd_back(t_list **alst, t_list *new)
-{
-	t_list *temporal;
-
-	temporal = (*alst);
-	if ((*alst))
-	{
-		while (temporal->next != NULL)
-			temporal = temporal->next;
-		temporal->next = new;
-	}
-	if (!(*alst))
-		((*alst) = new);
-} */
