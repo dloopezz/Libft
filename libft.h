@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft copy.h                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:24:26 by dlopez-s          #+#    #+#             */
-/*   Updated: 2023/03/31 15:38:54 by dlopez-s         ###   ########.fr       */
+/*   Updated: 2023/03/31 16:53:42 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*ft_strchr_gnl(char *s, int c);
+
+void	free_mtx(char **mtx);
+int	error_found(char *str);
 
 #endif
 
