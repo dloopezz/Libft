@@ -3,36 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 13:39:57 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/10/02 20:20:44 by lopezz           ###   ########.fr       */
+/*   Created: 2022/09/12 18:55:02 by cyacoub-          #+#    #+#             */
+/*   Updated: 2023/02/06 13:16:11 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	unsigned long int	i;
+	int	i;
 
 	i = 0;
+	if (str == 0)
+		return (0);
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
-
-/*
-#include <stdio.h>
-
-int	main()
+/*int main(void)
 {
-	char	*c;
-
-	c = "illo";
-	printf  ("%d", ft_strlen(c));
-	return (0);
-}
-*/
+	char    str[] = "Hola mundo";
+	printf("la longitud es = %ld\n", ft_strlen(str));
+}*/

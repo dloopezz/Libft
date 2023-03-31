@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lopezz <lopezz@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dlopez-s <dlopez-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 17:15:34 by dlopez-s          #+#    #+#             */
-/*   Updated: 2022/10/02 20:19:15 by lopezz           ###   ########.fr       */
+/*   Created: 2022/10/19 19:15:26 by dlopez-s          #+#    #+#             */
+/*   Updated: 2023/02/21 15:42:07 by dlopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+char	*ft_strchr_gnl(char *str, int c)
 {
-	if (!new)
-		return ;
-	if (!*lst)
+	if (str == 0)
+		return (0);
+	if ((unsigned char)c == '\0')
+		return ((char *)str);
+	while (*str != '\0')
 	{
-		*lst = new;
-		return ;
+		if (*str == (unsigned char)c)
+			return ((char *)str);
+		str++;
 	}
-	ft_lstlast (*lst)-> next = new;
+	return (0);
 }
